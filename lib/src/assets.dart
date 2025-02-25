@@ -48,24 +48,25 @@ class Assets {
             ? Interpolation.average
             : Interpolation.cubic;
 
+        var icon = image;
         if (trimLogo) {
           try {
-            image = trim(image);
+            icon = trim(icon);
           } catch (_) {}
         }
 
-        image = image.convert(numChannels: 4);
+        icon = icon.convert(numChannels: 4);
 
         Image resizedImage;
         if (scaledWidth > scaledHeight) {
           resizedImage = copyResize(
-            image,
+            icon,
             height: scaledHeight,
             interpolation: interpolation,
           );
         } else {
           resizedImage = copyResize(
-            image,
+            icon,
             width: scaledWidth,
             interpolation: interpolation,
           );
