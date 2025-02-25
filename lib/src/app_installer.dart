@@ -123,8 +123,8 @@ class AppInstaller {
       logoImage = trim(logoImage);
     } catch (_) {}
 
-    Image siteLogo = copyResize(logoImage, width: 192);
-    Image favicon = copyResize(logoImage, width: 16, height: 16);
+    Image siteLogo = copyResize(logoImage, width: 512);
+    Image favicon = copyResize(logoImage, width: 32, height: 32);
 
     String base64Logo = base64Encode(encodePng(siteLogo));
     String base64favicon = base64Encode(encodePng(favicon));
